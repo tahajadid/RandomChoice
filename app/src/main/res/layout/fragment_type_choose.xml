@@ -1,14 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.typeChoose.TypeChooseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/blue_gray_100"
+        android:paddingHorizontal="10dp">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/choice_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/choose_type_bg_unselected"
+            android:fontFamily="@font/gitchgitch"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="choice 1"
+            android:textColor="@color/blue_gray_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+        <TextView
+            android:id="@+id/description_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description pour les nombres.."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice_one" />
+
+        <TextView
+            android:id="@+id/choice_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/choose_type_bg_selected"
+            android:fontFamily="@font/gitchgitch"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="choice 2"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/blue_gray_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/description_numbers" />
+
+        <TextView
+            android:id="@+id/description_names"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description pour les noms.."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice_two" />
+
+        <TextView
+            android:id="@+id/choice_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/choose_type_bg_unselected"
+            android:fontFamily="@font/gitchgitch"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="20dp"
+            android:text="choice 3"
+            android:textColor="@color/blue_gray_200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice_two" />
+
+        <TextView
+            android:id="@+id/description_autres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="description pour les noms.."
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice_three" />
+
+        <TextView
+            android:id="@+id/next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/confirm_button_off"
+            android:fontFamily="@font/gitchgitch"
+            android:gravity="center"
+            android:paddingVertical="20dp"
+            android:text="Confirmer"
+            android:textColor="@color/blue_gray_100"
+            android:textSize="20sp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/gitchgitch"
+            android:text="Choisisez le type de vos elements"
+            android:textColor="@color/blue_gray_600"
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="40dp"
+            android:text="Veuillez choisir un type de vos elements.."
+            android:textColor="#B10640"
+            app:layout_constraintBottom_toTopOf="@+id/next_btn"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:src="@drawable/random_icon"
+            app:layout_constraintBottom_toTopOf="@+id/guideline7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline6"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

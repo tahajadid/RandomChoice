@@ -3,13 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/choose_type_bg.xml" value="0.1755" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/choose_type_bg_selected.xml" value="0.124" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/choose_type_bg_unselected.xml" value="0.1755" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/confimr_button_off.xml" value="0.1755" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/confirm_button_bg_on.xml" value="0.1755" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1755" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_splash_screen.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_type_choose.xml" value="0.2" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/activity_main.xml" value="0.1234375" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/content_main.xml" value="0.1375" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_splash_screen.xml" value="0.17" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

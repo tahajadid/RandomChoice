@@ -23,7 +23,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline4"
             app:lottie_autoPlay="true"
             app:lottie_loop="false"
-            app:lottie_repeatCount="2"
+            app:lottie_repeatCount="1"
             app:lottie_rawRes="@raw/ball_loading_speed"
             tools:ignore="MissingConstraints" />
 
