@@ -112,16 +112,24 @@ class EnterNumbersFragment : Fragment() {
         )
 
         binding.nextBtn.setOnClickListener {
-            when (sectionSelected) {
-                0 -> {
-                }
-                1 -> {
-                    findNavController().navigate(R.id.randomNumberFragment)
-                }
-                2 -> {
-                    findNavController().navigate(R.id.randomNumberFragment)
+            if(IntFrom!!.toInt() > IntTo!!.toInt()){
+                Toast.makeText(context,
+                    "Le nombre est supérieure que "+ IntFrom, Toast.LENGTH_SHORT).show()
+            }else{
+                when (sectionSelected) {
+                    0 -> {
+                        Toast.makeText(context,
+                            "S'il vous plait Choisissez une methode.. ", Toast.LENGTH_SHORT).show()
+                    }
+                    1 -> {
+                        findNavController().navigate(R.id.randomNumberFragment)
+                    }
+                    2 -> {
+                        findNavController().navigate(R.id.randomNumberFragment)
+                    }
                 }
             }
+
         }
     }
 

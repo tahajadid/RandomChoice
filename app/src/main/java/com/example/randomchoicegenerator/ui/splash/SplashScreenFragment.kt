@@ -34,8 +34,7 @@ class SplashScreenFragment : Fragment() {
             false
         )
 
-        SpicyAnimation().fadeToRight(binding.titleTop, 50F, 800)
-        SpicyAnimation().fadeToLeft(binding.titleBottom, 50F, 800)
+        SpicyAnimation().fadeToUp(binding.titleBottom, 50F, 1000)
 
         binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {

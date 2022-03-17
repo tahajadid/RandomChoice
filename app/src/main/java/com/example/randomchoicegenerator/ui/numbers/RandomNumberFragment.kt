@@ -2,6 +2,7 @@ package com.example.randomchoicegenerator.ui.numbers
 
 import android.animation.Animator
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,7 +52,7 @@ class RandomNumberFragment : Fragment() {
         binding.animationView.playAnimation()
 
         binding.nextBtn.setOnClickListener {
-            findNavController().navigate(R.id.typeChooseFragment)
+            findNavController().navigate(R.id.enterNumbersFragment)
         }
 
         binding.homeBtn.setOnClickListener {
@@ -81,15 +82,16 @@ class RandomNumberFragment : Fragment() {
     private fun initRandomChoice() {
         binding.animationView.visibility = View.GONE
         binding.renewCl.visibility = View.VISIBLE
+        binding.oneNumberCl.visibility = View.GONE
+        binding.twoNumberCl.visibility = View.GONE
 
         val numberFromRandom = getRandomNumber()
 
+
         if (numberFromRandom <10) {
-
-            matchChoiceAndAnimation(binding.numberOneAnimation, numberFromRandom)
             binding.oneNumberCl.visibility = View.VISIBLE
-        } else if (numberFromRandom> 10 && numberFromRandom <100) {
-
+            matchChoiceAndAnimation(binding.numberOneAnimation, numberFromRandom)
+        } else if ( (numberFromRandom<100) && (numberFromRandom>9)) {
             matchChoiceAndAnimation(binding.numberRightAnimation, getFirstNumber(numberFromRandom))
             matchChoiceAndAnimation(binding.numberLeftAnimation, getSecondNumber(numberFromRandom))
             binding.twoNumberCl.visibility = View.VISIBLE

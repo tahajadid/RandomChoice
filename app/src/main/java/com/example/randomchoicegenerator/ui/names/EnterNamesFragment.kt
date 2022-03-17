@@ -1,6 +1,7 @@
 package com.example.randomchoicegenerator.ui.names
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNamesBinding
+import com.example.randomchoicegenerator.model.CustomObject
+import com.example.randomchoicegenerator.model.ListOfNames
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -44,7 +47,7 @@ class EnterNamesFragment : Fragment() {
         }
 
         binding.nextBtn.setOnClickListener {
-            // Do something..
+            getItems()
         }
     }
 
@@ -88,7 +91,6 @@ class EnterNamesFragment : Fragment() {
             Toast.makeText(context, "Error: " + e.message, Toast.LENGTH_LONG).show()
         }
 
-        getItems()
     }
 
     // User click on "Show Selections" button.
@@ -97,10 +99,10 @@ class EnterNamesFragment : Fragment() {
         var s: String? = null
         for (i in 0 until count) {
             val child = binding.chipGroup.getChildAt(i) as Chip
-            if (s != null) {
-                s += ", " + child.text.toString()
-            }
+            s += ", " + child.text.toString()
+            ListOfNames.add(i, CustomObject(i,child.text.toString()))
         }
+        Log.d("ValueChoose","List is = "+ ListOfNames.toString())
         Toast.makeText(context, "result : " + s, Toast.LENGTH_LONG).show()
     }
 

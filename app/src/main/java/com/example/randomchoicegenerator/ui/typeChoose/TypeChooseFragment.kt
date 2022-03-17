@@ -30,7 +30,7 @@ class TypeChooseFragment : Fragment() {
             false
         )
 
-        SpicyAnimation().fadeToDown(binding.separatorTop, 30F, 600)
+        SpicyAnimation().fadeToDown(binding.separatorTop, 20F, 400)
         initComponent()
         return binding.root
     }
@@ -41,6 +41,10 @@ class TypeChooseFragment : Fragment() {
 
     private fun initComponent() {
         initBackground()
+
+        SpicyAnimation().fadeToDown(binding.descriptionNumbers,20F,600)
+        SpicyAnimation().fadeToDown(binding.descriptionNames,20F,800)
+        SpicyAnimation().fadeToDown(binding.descriptionAutres,20F,1000)
 
         // Section 1
         binding.choiceOne.setOnClickListener {
