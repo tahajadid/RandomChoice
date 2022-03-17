@@ -15,4 +15,24 @@
         android:name="com.example.randomchoicegenerator.ui.typeChoose.TypeChooseFragment"
         android:label="fragment_type_choose"
         tools:layout="@layout/fragment_type_choose" />
+    <fragment
+        android:id="@+id/enterNamesFragment"
+        android:name="com.example.randomchoicegenerator.ui.names.EnterNamesFragment"
+        android:label="fragment_enter_names"
+        tools:layout="@layout/fragment_enter_names" />
+    <fragment
+        android:id="@+id/enterNumbersFragment"
+        android:name="com.example.randomchoicegenerator.ui.numbers.EnterNumbersFragment"
+        android:label="fragment_enter_numbers"
+        tools:layout="@layout/fragment_enter_numbers" />
+    <fragment
+        android:id="@+id/enterOthersFragment"
+        android:name="com.example.randomchoicegenerator.ui.others.EnterOthersFragment"
+        android:label="fragment_enter_others"
+        tools:layout="@layout/fragment_enter_others" />
+    <fragment
+        android:id="@+id/randomNumberFragment"
+        android:name="com.example.randomchoicegenerator.ui.numbers.RandomNumberFragment"
+        android:label="fragment_random_number"
+        tools:layout="@layout/fragment_random_number" />
 </navigation>

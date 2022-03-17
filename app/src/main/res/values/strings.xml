@@ -1,4 +1,8 @@
 <resources>
+    <string name="description_numbers">Entrez les nobmres que vous voulez, ou bien choisir un intervalle des nombres..</string>
+    <string name="description_names">Entrez votre liste des noms que vous voulez..</string>
+    <string name="description_other">Entrez des noms, des comptes, des tag, des Urls, ce que vous voulez..</string>
+
     <string name="app_name">Random Choice Generator</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

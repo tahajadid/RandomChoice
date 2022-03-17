@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.RandomChoiceGenerator" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/blue_gray_500</item>
-        <item name="colorPrimaryVariant">@color/blue_gray_700</item>
+        <item name="colorPrimary">@color/blue_gray_400</item>
+        <item name="colorPrimaryVariant">@color/blue_gray_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/blue_gray_400</item>
