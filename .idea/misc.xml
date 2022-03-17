@@ -8,11 +8,13 @@
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/drawable/ic_or_bg.xml" value="0.1" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/drawable/method_numbers_bg.xml" value="0.1165" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/drawable/method_numbers_bg_off.xml" value="0.1165" />
+        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/drawable/new_random_bg.xml" value="0.139" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/activity_main.xml" value="0.1234375" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/content_main.xml" value="0.1375" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_enter_names.xml" value="0.2687793427230047" />
-        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_enter_numbers.xml" value="0.2" />
-        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_random_number.xml" value="0.10560068405301411" />
+        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_enter_numbers.xml" value="0.25" />
+        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_enter_others.xml" value="0.10560068405301411" />
+        <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_random_number.xml" value="0.15" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_splash_screen.xml" value="0.17" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/fragment_type_choose.xml" value="0.18" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/layout_chip_entry.xml" value="0.22" />

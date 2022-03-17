@@ -1,17 +1,19 @@
 package com.example.randomchoicegenerator.ui.numbers
 
+import android.animation.Animator
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.example.randomchoicegenerator.R
-import com.example.randomchoicegenerator.databinding.FragmentEnterNumbersBinding
 import com.example.randomchoicegenerator.databinding.FragmentRandomNumberBinding
 import com.example.randomchoicegenerator.model.IntFrom
 import com.example.randomchoicegenerator.model.IntTo
+import com.example.spicyanimation.SpicyAnimation
 import kotlin.random.Random
 
 class RandomNumberFragment : Fragment() {
@@ -34,12 +36,122 @@ class RandomNumberFragment : Fragment() {
             container,
             false
         )
-        val nextValues = Random.nextInt(IntFrom!!.toInt(), IntTo!!.toInt())
 
-        Toast.makeText(
-            context, " result : " + nextValues, Toast.LENGTH_LONG
-        ).show()
-
+        initComponent()
         return binding.root
+    }
+
+    private fun initComponent() {
+
+        binding.oneNumberCl.visibility = View.GONE
+        binding.renewCl.visibility = View.GONE
+        binding.twoNumberCl.visibility = View.GONE
+
+        binding.animationView.visibility = View.VISIBLE
+        binding.animationView.playAnimation()
+
+        binding.nextBtn.setOnClickListener {
+            findNavController().navigate(R.id.typeChooseFragment)
+        }
+
+        binding.homeBtn.setOnClickListener {
+            findNavController().navigate(R.id.typeChooseFragment)
+        }
+
+        binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
+            override fun onAnimationRepeat(animation: Animator?) {
+                // Do nothing
+            }
+
+            override fun onAnimationEnd(animation: Animator?) {
+                // Do nothing
+                initRandomChoice()
+            }
+
+            override fun onAnimationCancel(animation: Animator?) {
+                // Do nothing
+            }
+
+            override fun onAnimationStart(animation: Animator?) {
+                // Do nothing
+            }
+        })
+    }
+
+    private fun initRandomChoice() {
+        binding.animationView.visibility = View.GONE
+        binding.renewCl.visibility = View.VISIBLE
+
+        val numberFromRandom = getRandomNumber()
+
+        if (numberFromRandom <10) {
+
+            matchChoiceAndAnimation(binding.numberOneAnimation, numberFromRandom)
+            binding.oneNumberCl.visibility = View.VISIBLE
+        } else if (numberFromRandom> 10 && numberFromRandom <100) {
+
+            matchChoiceAndAnimation(binding.numberRightAnimation, getFirstNumber(numberFromRandom))
+            matchChoiceAndAnimation(binding.numberLeftAnimation, getSecondNumber(numberFromRandom))
+            binding.twoNumberCl.visibility = View.VISIBLE
+        } else {
+            // three numbers
+        }
+
+        binding.renewCl.setOnClickListener {
+            initComponent()
+        }
+    }
+
+    private fun getSecondNumber(numberFromRandom: Int): Int {
+        return numberFromRandom / 10
+    }
+
+    private fun getFirstNumber(numberFromRandom: Int): Int {
+        return numberFromRandom % 10
+    }
+
+    private fun getRandomNumber(): Int {
+        return Random.nextInt(IntFrom!!.toInt(), IntTo!!.toInt())
+    }
+
+    private fun matchChoiceAndAnimation(lottieView: LottieAnimationView, nextValues: Int) {
+
+        when (nextValues) {
+            0 -> {
+                lottieView.setAnimation(R.raw.number_zero)
+            }
+            1 -> {
+                lottieView.setAnimation(R.raw.number_one)
+            }
+            2 -> {
+                lottieView.setAnimation(R.raw.number_two)
+            }
+            3 -> {
+                lottieView.setAnimation(R.raw.number_three)
+            }
+            4 -> {
+                lottieView.setAnimation(R.raw.number_four)
+            }
+            5 -> {
+                lottieView.setAnimation(R.raw.number_five)
+            }
+            6 -> {
+                lottieView.setAnimation(R.raw.number_six)
+            }
+            7 -> {
+                lottieView.setAnimation(R.raw.number_seven)
+            }
+            8 -> {
+                lottieView.setAnimation(R.raw.number_eight)
+            }
+            9 -> {
+                lottieView.setAnimation(R.raw.number_nine)
+            }
+        }
+
+        SpicyAnimation().fadeToUp(binding.renewCl, 20F, 300)
+        SpicyAnimation().fadeToUp(binding.numberOneAnimation, 50F, 800)
+
+        lottieView.playAnimation()
     }
 }
