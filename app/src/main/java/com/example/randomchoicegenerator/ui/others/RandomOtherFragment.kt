@@ -1,4 +1,4 @@
-package com.example.randomchoicegenerator.ui.names
+package com.example.randomchoicegenerator.ui.others
 
 import android.animation.Animator
 import android.os.Bundle
@@ -9,17 +9,17 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
-import com.example.randomchoicegenerator.databinding.FragmentRandomNamesBinding
 import com.example.randomchoicegenerator.databinding.FragmentRandomNumberBinding
-import com.example.randomchoicegenerator.model.IntFrom
-import com.example.randomchoicegenerator.model.IntTo
+import com.example.randomchoicegenerator.databinding.FragmentRandomOtherBinding
 import com.example.randomchoicegenerator.model.ListOfNames
+import com.example.randomchoicegenerator.model.ListOfOthers
+import com.example.randomchoicegenerator.model.SocialMediaSelected
 import com.example.spicyanimation.SpicyAnimation
 import kotlin.random.Random
 
 
-class RandomNamesFragment : Fragment() {
-    private lateinit var binding: FragmentRandomNamesBinding
+class RandomOtherFragment : Fragment() {
+    private lateinit var binding: FragmentRandomOtherBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class RandomNamesFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_random_names,
+            R.layout.fragment_random_other,
             container,
             false
         )
@@ -42,12 +42,23 @@ class RandomNamesFragment : Fragment() {
     }
 
     private fun initComponent() {
-
         binding.animationSuccess.visibility = View.GONE
-        binding.animationView.visibility = View.VISIBLE
+        binding.animationCongrate.visibility = View.GONE
         binding.randomName.visibility = View.GONE
+        binding.randomCongrate.visibility = View.GONE
+
+        binding.animationView.visibility = View.VISIBLE
 
         binding.animationView.playAnimation()
+
+        setTheRightImage()
+        binding.nextBtn.setOnClickListener {
+            findNavController().navigate(R.id.enterOthersFragment)
+        }
+
+        binding.homeBtn.setOnClickListener {
+            findNavController().navigate(R.id.typeChooseFragment)
+        }
 
         binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
@@ -69,13 +80,19 @@ class RandomNamesFragment : Fragment() {
                 // Do nothing
             }
         })
+    }
 
-        binding.nextBtn.setOnClickListener {
-            findNavController().navigate(R.id.enterNamesFragment)
-        }
+    private fun setTheRightImage() {
+        when(SocialMediaSelected){
+            "facebook" -> binding.imageCongrate.setImageResource(R.drawable.facebook)
+            "insta" -> binding.imageCongrate.setImageResource(R.drawable.insta)
+            "other" -> binding.imageCongrate.setImageResource(R.drawable.random_icon_last)
+            "wtsp" -> binding.imageCongrate.setImageResource(R.drawable.whatsapp)
+            "youtube" -> binding.imageCongrate.setImageResource(R.drawable.youtube)
+            "telegram" -> binding.imageCongrate.setImageResource(R.drawable.telegram)
+            "forms" -> binding.imageCongrate.setImageResource(R.drawable.google_forms)
+            "school" -> binding.imageCongrate.setImageResource(R.drawable.graduation_last)
 
-        binding.homeBtn.setOnClickListener {
-            findNavController().navigate(R.id.typeChooseFragment)
         }
     }
 
@@ -83,12 +100,16 @@ class RandomNamesFragment : Fragment() {
         binding.renewCl.visibility = View.VISIBLE
         binding.animationView.visibility = View.GONE
         binding.randomName.visibility = View.VISIBLE
+        binding.randomCongrate.visibility = View.VISIBLE
 
         binding.animationSuccess.visibility = View.VISIBLE
         binding.animationSuccess.playAnimation()
 
+        binding.animationCongrate.visibility = View.VISIBLE
+        binding.animationCongrate.playAnimation()
+
         SpicyAnimation().fadeToDown(binding.randomName, 50F, 1200)
-        binding.randomName.text = ListOfNames.get(getRandomNumber()).label
+        binding.randomName.text = ListOfOthers.get(getRandomNumber()).label
 
         binding.renewCl.setOnClickListener {
             initComponent()
@@ -98,7 +119,8 @@ class RandomNamesFragment : Fragment() {
     private fun getRandomNumber() : Int {
         // The min parameter (the origin) is inclusive
         // whereas the upper bound max is exclusive.
-        return Random.nextInt(0,ListOfNames.size!!.toInt())
+        return Random.nextInt(0,ListOfOthers.size!!.toInt())
     }
+
 
 }

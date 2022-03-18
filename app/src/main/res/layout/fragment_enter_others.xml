@@ -143,7 +143,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.842"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/inputNumber">
+                        app:layout_constraintTop_toBottomOf="@+id/inputOther">
 
                         <com.google.android.material.chip.ChipGroup
                             android:id="@+id/chipGroup"
@@ -160,7 +160,7 @@
                     </androidx.core.widget.NestedScrollView>
 
                     <EditText
-                        android:id="@+id/inputNumber"
+                        android:id="@+id/inputOther"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="10dp"
@@ -174,7 +174,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/separator_two" />
 
                     <TextView
-                        android:id="@+id/addNumber"
+                        android:id="@+id/addOther"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -509,27 +509,27 @@
             android:background="@drawable/confirm_button_off"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:paddingVertical="18dp"
+            android:paddingVertical="16dp"
             android:text="Choisir"
+            android:elevation="4dp"
             android:textColor="@color/blue_gray_100"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
         <TextView
-            android:id="@+id/error"
+            android:id="@+id/error_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:fontFamily="@font/roboto_medium"
-            android:layout_marginStart="40dp"
             android:text="Veuillez choisir un type de vos elements.."
             android:textColor="#B10640"
             android:visibility="gone"
+            android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/next_btn"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline

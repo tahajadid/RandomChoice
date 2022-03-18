@@ -139,15 +139,16 @@
             android:background="@drawable/confirm_button_off"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
-            android:paddingVertical="20dp"
+            android:paddingVertical="18dp"
             android:text="Confirmer"
+            android:elevation="4dp"
             android:textColor="@color/blue_gray_100"
             android:textSize="20sp"
-            android:layout_marginBottom="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.157"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
         <TextView
             android:id="@+id/textView2"
@@ -220,6 +221,12 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.02" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -67,6 +67,8 @@ class RandomNumberFragment : Fragment() {
             override fun onAnimationEnd(animation: Animator?) {
                 // Do nothing
                 initRandomChoice()
+                binding.homeBtn.isEnabled = true
+                binding.nextBtn.isEnabled = true
             }
 
             override fun onAnimationCancel(animation: Animator?) {

@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_gray_900"
-        >
+        android:background="@color/blue_gray_900">
 
 
         <TextView
@@ -24,6 +23,7 @@
             android:gravity="center"
             android:paddingVertical="18dp"
             android:text="Re-Choisir"
+            android:enabled="false"
             android:textColor="@color/blue_gray_900"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,6 +41,7 @@
             android:gravity="center"
             android:paddingVertical="18dp"
             android:text="Acceuil"
+            android:enabled="false"
             android:layout_marginEnd="20dp"
             android:textColor="@color/blue_gray_900"
             android:textSize="20sp"
@@ -62,6 +63,20 @@
             app:layout_constraintBottom_toTopOf="@+id/next_btn"
             app:layout_constraintStart_toStartOf="parent" />
 
+
+        <TextView
+            android:id="@+id/randomCongrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:text="Le gagnant est"
+            android:textColor="@color/blue_gray_200"
+            android:layout_marginBottom="30dp"
+            android:textSize="26sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/randomName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/randomName"
@@ -104,7 +119,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:lottie_autoPlay="true"
-            android:layout_marginBottom="20dp"
             app:lottie_rawRes="@raw/only_success"
             app:lottie_repeatCount="0"
             tools:ignore="MissingConstraints" />
