@@ -44,7 +44,7 @@ class TypeChooseFragment : Fragment() {
 
         SpicyAnimation().fadeToDown(binding.descriptionNumbers,20F,600)
         SpicyAnimation().fadeToDown(binding.descriptionNames,20F,800)
-        SpicyAnimation().fadeToDown(binding.descriptionAutres,20F,1000)
+        SpicyAnimation().fadeToDown(binding.descriptionAutres,20F,1200)
 
         // Section 1
         binding.choiceOne.setOnClickListener {
@@ -75,8 +75,8 @@ class TypeChooseFragment : Fragment() {
         // Section 3
         binding.choiceThree.setOnClickListener {
             initBackground()
-            isSelected = 2
-            binding.choiceThree.background = context?.let {
+            isSelected = 3
+            binding.viewOther.background = context?.let {
                 ContextCompat.getDrawable(it, R.drawable.choose_type_bg_selected)
             }
 
@@ -93,7 +93,6 @@ class TypeChooseFragment : Fragment() {
                     binding.error.visibility = View.VISIBLE
                     SpicyAnimation().fadeToUp(binding.nextBtn, 30F, 200)
                 }
-
                 1 -> {
                     binding.error.visibility = View.GONE
                     findNavController().navigate(R.id.enterNumbersFragment)
@@ -102,6 +101,10 @@ class TypeChooseFragment : Fragment() {
                 2 -> {
                     binding.error.visibility = View.GONE
                     findNavController().navigate(R.id.enterNamesFragment)
+                }
+                3 -> {
+                    binding.error.visibility = View.GONE
+                    findNavController().navigate(R.id.enterOthersFragment)
                 }
             }
         }
@@ -117,7 +120,7 @@ class TypeChooseFragment : Fragment() {
             ContextCompat.getDrawable(it, R.drawable.choose_type_bg_unselected)
         }
 
-        binding.choiceThree.background = context?.let {
+        binding.viewOther.background = context?.let {
             ContextCompat.getDrawable(it, R.drawable.choose_type_bg_unselected)
         }
 

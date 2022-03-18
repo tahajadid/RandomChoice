@@ -14,6 +14,7 @@ import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNumbersBinding
 import com.example.randomchoicegenerator.model.IntFrom
 import com.example.randomchoicegenerator.model.IntTo
+import com.example.spicyanimation.SpicyAnimation
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 import kotlin.random.Random
@@ -51,6 +52,8 @@ class EnterNumbersFragment : Fragment() {
     }
 
     private fun initComponent() {
+
+        SpicyAnimation().fadeToDown(binding.view, 20F, 400)
 
         // add number
         binding.addNumber.setOnClickListener {

@@ -10,15 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_gray_100"
-        android:paddingHorizontal="10dp">
+        android:background="@color/blue_gray_100">
 
 
         <TextView
             android:id="@+id/next_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
+            android:layout_marginHorizontal="50dp"
             android:background="@drawable/confirm_button_off"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center"
@@ -41,6 +40,7 @@
             android:text="Entrez les noms que vous voulez"
             android:textColor="@color/blue_gray_600"
             android:textSize="22sp"
+            android:paddingHorizontal="10dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent"
@@ -117,9 +117,9 @@
             android:layout_alignParentBottom="true"
             android:background="@drawable/enter_data_bg"
             android:orientation="vertical"
+            android:layout_marginHorizontal="10dp"
             android:scrollbars="none"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.842"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/inputName">
 
@@ -143,8 +143,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:ems="10"
+            android:fontFamily="@font/roboto_medium"
             android:inputType="textPersonName"
-            android:hint="Nom"
+            android:layout_marginStart="10dp"
+            android:hint="Nom (Ex: Mohammed, Taha...)"
+            android:textSize="16sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
@@ -158,6 +161,7 @@
             android:paddingHorizontal="6dp"
             android:paddingVertical="10dp"
             android:text="Ajouter"
+            android:elevation="8dp"
             android:textColor="@color/blue_gray_100"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.673"

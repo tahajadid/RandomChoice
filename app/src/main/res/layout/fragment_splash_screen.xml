@@ -13,40 +13,24 @@
         tools:context=".ui.splash.SplashScreenFragment">
 
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:id="@+id/animationView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline4"
-            app:lottie_autoPlay="true"
-            app:lottie_loop="false"
-            app:lottie_repeatCount="1"
-            app:lottie_rawRes="@raw/ball_loading_speed"
-            tools:ignore="MissingConstraints" />
-
-
         <TextView
             android:id="@+id/titleBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_medium"
-            android:text="Votre Choix Aléatoire"
-            android:textColor="@color/blue_gray_200"
-            android:textSize="34sp"
-            android:layout_marginBottom="70dp"
-            app:layout_constraintBottom_toBottomOf="@+id/animationView"
+            android:text="Choix Aléatoire"
+            android:textColor="@color/blue_gray_800"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.65" />
+            app:layout_constraintGuide_percent="0.9" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline4"
@@ -55,12 +39,29 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline5"
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="159dp"
+            android:layout_height="98dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline4"
+            app:srcCompat="@drawable/random_icon_splash" />
+
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.7" />
+            android:fontFamily="@font/roboto_medium_italic"
+            android:text="By : Taha Jadid"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -10,17 +10,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue_gray_100"
-        android:paddingHorizontal="10dp">
+        android:background="@color/blue_gray_100">
 
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_marginHorizontal="10dp"
             android:fontFamily="@font/roboto_medium"
             android:gravity="center_vertical"
-            android:text="Entrez les numeros que vous voulez"
+            android:text="Entrez les numéros que vous voulez"
             android:textColor="@color/blue_gray_600"
             android:textSize="22sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline7"
@@ -69,6 +69,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="190dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="10dp"
                     android:background="@drawable/method_numbers_bg_off"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -91,7 +92,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="Intervalle des nombres"
+                        android:text="Intervalle des nombres (0 - 99)"
                         android:textColor="@color/blue_gray_500"
                         app:layout_constraintStart_toEndOf="@+id/checkBoxIntervalle"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -100,8 +101,8 @@
                         android:id="@+id/separator_one"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/blue_gray_400"
+                        android:layout_marginTop="10dp"
+                        android:elevation="2dp"                        android:background="@color/blue_gray_400"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/iterval_title" />
@@ -141,7 +142,7 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="De"
+                        android:text="De :"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/separator_one" />
@@ -152,22 +153,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:fontFamily="@font/roboto_medium"
-                        android:text="A"
+                        android:text="A :"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="@+id/guideline10"
                         app:layout_constraintTop_toBottomOf="@+id/separator_one" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginEnd="10dp"
-                        android:fontFamily="@font/roboto_medium"
-                        android:text="0 - 99"
-                        android:textColor="#D64518"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -208,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginHorizontal="10dp"
                     android:background="@drawable/method_numbers_bg_off"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -238,8 +228,8 @@
                         android:id="@+id/separator_two"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_margin="10dp"
-                        android:background="@color/blue_gray_400"
+                        android:layout_marginTop="10dp"
+                        android:elevation="2dp"                        android:background="@color/blue_gray_400"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/special_title" />
@@ -292,6 +282,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:layout_marginEnd="10dp"
+                        android:elevation="8dp"
                         android:background="@drawable/enter_data_bg"
                         android:fontFamily="@font/roboto_medium"
                         android:paddingHorizontal="6dp"

@@ -113,7 +113,9 @@ class RandomNumberFragment : Fragment() {
     }
 
     private fun getRandomNumber(): Int {
-        return Random.nextInt(IntFrom!!.toInt(), IntTo!!.toInt())
+        // The min parameter (the origin) is inclusive
+        // whereas the upper bound max is exclusive.
+        return Random.nextInt(IntFrom!!.toInt()-1, IntTo!!.toInt())
     }
 
     private fun matchChoiceAndAnimation(lottieView: LottieAnimationView, nextValues: Int) {

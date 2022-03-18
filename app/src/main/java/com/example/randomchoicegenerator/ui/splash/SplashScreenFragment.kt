@@ -2,6 +2,7 @@ package com.example.randomchoicegenerator.ui.splash
 
 import android.animation.Animator
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,26 +35,14 @@ class SplashScreenFragment : Fragment() {
             false
         )
 
-        SpicyAnimation().fadeToUp(binding.titleBottom, 50F, 1000)
+        SpicyAnimation().fadeToUp(binding.titleBottom, 50F, 700)
 
-        binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {
-                // Do nothing
-            }
+        // we used the postDelayed(Runnable, time) method
+        // to send a message with a delayed time.
+        Handler().postDelayed({
+            findNavController().navigate(R.id.typeChooseFragment)
+        }, 2500) // 2500 is the delayed time in milliseconds.
 
-            override fun onAnimationEnd(animation: Animator?) {
-                // Do nothing
-                findNavController().navigate(R.id.typeChooseFragment)
-            }
-
-            override fun onAnimationCancel(animation: Animator?) {
-                // Do nothing
-            }
-
-            override fun onAnimationStart(animation: Animator?) {
-                // Do nothing
-            }
-        })
 
         // Inflate the layout for this fragment
         return binding.root

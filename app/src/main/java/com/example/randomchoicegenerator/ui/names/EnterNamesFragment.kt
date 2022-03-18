@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNamesBinding
 import com.example.randomchoicegenerator.model.CustomObject
 import com.example.randomchoicegenerator.model.ListOfNames
+import com.example.spicyanimation.SpicyAnimation
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
 
@@ -42,16 +45,25 @@ class EnterNamesFragment : Fragment() {
     }
 
     private fun initComponent() {
+
+        SpicyAnimation().fadeToDown(binding.view, 20F, 400)
+
         binding.addName.setOnClickListener {
             addNewChip()
         }
 
         binding.nextBtn.setOnClickListener {
             getItems()
+            findNavController().navigate(R.id.randomNamesFragment)
         }
     }
 
     private fun addNewChip() {
+
+        binding.nextBtn.background = context?.let {
+            ContextCompat.getDrawable(it, R.drawable.confirm_button_on)
+        }
+
         val keyword: String = binding.inputName.text.toString()
         if (keyword == null || keyword.isEmpty()) {
             Toast.makeText(context, "Entrez un nom..", Toast.LENGTH_LONG).show()
@@ -100,7 +112,10 @@ class EnterNamesFragment : Fragment() {
         for (i in 0 until count) {
             val child = binding.chipGroup.getChildAt(i) as Chip
             s += ", " + child.text.toString()
-            ListOfNames.add(i, CustomObject(i,child.text.toString()))
+            if(child.text.toString()!=null){
+                ListOfNames.add(i, CustomObject(i,child.text.toString()))
+            }
+
         }
         Log.d("ValueChoose","List is = "+ ListOfNames.toString())
         Toast.makeText(context, "result : " + s, Toast.LENGTH_LONG).show()

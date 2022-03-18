@@ -40,4 +40,9 @@
         android:name="com.example.randomchoicegenerator.ui.names.RandomNamesFragment"
         android:label="fragment_random_names"
         tools:layout="@layout/fragment_random_names" />
+    <fragment
+        android:id="@+id/randomOtherFragment"
+        android:name="com.example.randomchoicegenerator.RandomOtherFragment"
+        android:label="fragment_random_other"
+        tools:layout="@layout/fragment_random_other" />
 </navigation>
