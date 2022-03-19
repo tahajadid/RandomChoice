@@ -45,4 +45,9 @@
         android:name="com.example.randomchoicegenerator.ui.others.RandomOtherFragment"
         android:label="fragment_random_other"
         tools:layout="@layout/fragment_random_other" />
+    <fragment
+        android:id="@+id/randomNumberSpecificFragment"
+        android:name="com.example.randomchoicegenerator.ui.numbers.RandomNumberSpecificFragment"
+        android:label="fragment_random_number_specific"
+        tools:layout="@layout/fragment_random_number_specific" />
 </navigation>

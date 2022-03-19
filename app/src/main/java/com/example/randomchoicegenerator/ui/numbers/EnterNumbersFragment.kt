@@ -1,6 +1,7 @@
 package com.example.randomchoicegenerator.ui.numbers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,12 +13,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNumbersBinding
+import com.example.randomchoicegenerator.model.*
 import com.example.randomchoicegenerator.model.IntFrom
 import com.example.randomchoicegenerator.model.IntTo
+import com.example.randomchoicegenerator.model.ListOfNumbers
+import com.example.randomchoicegenerator.myArrayProvider
 import com.example.spicyanimation.SpicyAnimation
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import kotlin.random.Random
 
 // ktlint-disable no-wildcard-imports
 
@@ -25,9 +28,11 @@ class EnterNumbersFragment : Fragment() {
 
     private lateinit var binding: FragmentEnterNumbersBinding
     private var sectionSelected = 0
-    private var pickerVals: Array<String> = arrayOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15")
+    private var pickerVals: Array<String> = arrayOf("0", "1", "2", "3", "4", "5", "6", "7",
+        "8", "9", "10", "11", "12", "13", "14", "15","210","211","212","213")
     private var numberChooseFrom: String = "0"
     private var numberChooseTo: String = "0"
+    private lateinit var arrayToPut : Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,12 +51,27 @@ class EnterNumbersFragment : Fragment() {
             false
         )
 
+        /**
+         * for test
+         */
+
+        val my = myArrayProvider(999)
+        arrayToPut = my.getArrayList()
+        Log.d("NumberChoose","all size =  "+my.getArrayList().size + " "+my.getArrayList()[0])
+
         initComponent()
 
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        initComponent()
+    }
+
     private fun initComponent() {
+
+        ListOfNumbers = ArrayList()
 
         SpicyAnimation().fadeToDown(binding.view, 20F, 400)
 
@@ -92,14 +112,14 @@ class EnterNumbersFragment : Fragment() {
             binding.checkBoxIntervalle.setImageResource(R.drawable.unselected_radio)
         }
 
-        binding.numberPickerFrom.maxValue = pickerVals.size
-        binding.numberPickerFrom.minValue = 1
+        binding.numberPickerFrom.maxValue = arrayToPut.size - 1
+        binding.numberPickerFrom.minValue = 0
 
-        binding.numberPickerTo.maxValue = pickerVals.size
-        binding.numberPickerTo.minValue = 1
+        binding.numberPickerTo.maxValue = arrayToPut.size - 1
+        binding.numberPickerTo.minValue = 0
 
-        binding.numberPickerFrom.displayedValues = pickerVals
-        binding.numberPickerTo.displayedValues = pickerVals
+        binding.numberPickerFrom.displayedValues = arrayToPut
+        binding.numberPickerTo.displayedValues = arrayToPut
 
         binding.numberPickerFrom.setOnValueChangedListener(
             OnValueChangeListener { numberPicker, i, i1 ->
@@ -115,25 +135,37 @@ class EnterNumbersFragment : Fragment() {
         )
 
         binding.nextBtn.setOnClickListener {
-            if(IntFrom!!.toInt() > IntTo!!.toInt()){
-                Toast.makeText(context,
-                    "Le nombre est supérieure que "+ IntFrom, Toast.LENGTH_SHORT).show()
+
+            if(sectionSelected==0){
+                showError("S'il vous plait, choisissez une methode..")
             }else{
                 when (sectionSelected) {
-                    0 -> {
-                        Toast.makeText(context,
-                            "S'il vous plait Choisissez une methode.. ", Toast.LENGTH_SHORT).show()
-                    }
                     1 -> {
-                        findNavController().navigate(R.id.randomNumberFragment)
+                        if(IntFrom!!.toInt() > IntTo!!.toInt()){
+                            showError("Le nombre "+ IntFrom.toString()+" est supérieure que "+ IntTo.toString())
+                        }else{
+                            binding.errorMessage.visibility = View.GONE
+                            findNavController().navigate(R.id.randomNumberFragment)
+                        }
                     }
                     2 -> {
-                        findNavController().navigate(R.id.randomNumberFragment)
+                        getItems()
+                        if (ListOfNumbers.size==0){
+                            showError("S'il vout plait, entrez des numéros..")
+                        }else{
+                            binding.errorMessage.visibility = View.GONE
+                            findNavController().navigate(R.id.randomNumberSpecificFragment)
+                        }
                     }
                 }
             }
-
         }
+    }
+
+    private fun showError(errorMessage :String) {
+        binding.errorMessage.visibility = View.VISIBLE
+        binding.errorMessage.text = errorMessage
+        SpicyAnimation().fadeToUp(binding.nextBtn, 30F, 200)
     }
 
     private fun initBackground() {
@@ -188,6 +220,21 @@ class EnterNumbersFragment : Fragment() {
             e.printStackTrace()
             Toast.makeText(context, "Error: " + e.message, Toast.LENGTH_LONG).show()
         }
+    }
+
+    // User click on "Show Selections" button.
+    private fun getItems() {
+        val count: Int = binding.chipGroup.getChildCount()
+        var s: String? = null
+        for (i in 0 until count) {
+            val child = binding.chipGroup.getChildAt(i) as Chip
+            s += ", " + child.text.toString()
+            if(child.text.toString()!=null){
+                ListOfNumbers.add(i, CustomObject(i,child.text.toString()))
+            }
+
+        }
+        Log.d("ValueChoose","List is = "+ ListOfNumbers.toString())
     }
 
     // User close a Chip.

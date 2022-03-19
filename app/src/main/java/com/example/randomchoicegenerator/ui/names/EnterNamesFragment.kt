@@ -14,6 +14,7 @@ import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNamesBinding
 import com.example.randomchoicegenerator.model.CustomObject
 import com.example.randomchoicegenerator.model.ListOfNames
+import com.example.randomchoicegenerator.model.ListOfOthers
 import com.example.spicyanimation.SpicyAnimation
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
@@ -44,7 +45,13 @@ class EnterNamesFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        initComponent()
+    }
+
     private fun initComponent() {
+        ListOfNames = ArrayList()
 
         SpicyAnimation().fadeToDown(binding.view, 20F, 400)
 
@@ -54,8 +61,18 @@ class EnterNamesFragment : Fragment() {
 
         binding.nextBtn.setOnClickListener {
             getItems()
-            findNavController().navigate(R.id.randomNamesFragment)
+            if(ListOfNames.size==0){
+                showError("Entrez des mots/noms dans le champ pour choisir..")
+            }else{
+                findNavController().navigate(R.id.randomNamesFragment)
+            }
         }
+    }
+
+    private fun showError(errorMessage :String) {
+        binding.errorMessage.visibility = View.VISIBLE
+        binding.errorMessage.text = errorMessage
+        SpicyAnimation().fadeToUp(binding.nextBtn, 30F, 200)
     }
 
     private fun addNewChip() {
@@ -115,10 +132,8 @@ class EnterNamesFragment : Fragment() {
             if(child.text.toString()!=null){
                 ListOfNames.add(i, CustomObject(i,child.text.toString()))
             }
-
         }
         Log.d("ValueChoose","List is = "+ ListOfNames.toString())
-        Toast.makeText(context, "result : " + s, Toast.LENGTH_LONG).show()
     }
 
     // User close a Chip.

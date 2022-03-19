@@ -13,8 +13,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentEnterNumbersBinding
 import com.example.randomchoicegenerator.databinding.FragmentEnterOthersBinding
-import com.example.randomchoicegenerator.model.CustomObject
-import com.example.randomchoicegenerator.model.ListOfNames
+import com.example.randomchoicegenerator.model.*
+import com.example.randomchoicegenerator.model.ListOfNumbers
 import com.example.randomchoicegenerator.model.ListOfOthers
 import com.example.randomchoicegenerator.model.SocialMediaSelected
 import com.example.spicyanimation.SpicyAnimation
@@ -47,7 +47,14 @@ class EnterOthersFragment : Fragment() {
         return binding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+        initComponent()
+    }
+
     private fun initComponent() {
+        ListOfOthers = ArrayList()
+
         SpicyAnimation().fadeToDown(binding.view, 20F, 400)
 
         initAllBackgrounds()

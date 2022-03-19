@@ -9,6 +9,7 @@
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/confimr_button_off.xml" value="0.1755" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/confirm_button_bg_on.xml" value="0.1755" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/confirm_button_off.xml" value="0.1915" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/demo_picker_bg.xml" value="0.1015" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/enter_data_bg.xml" value="0.1175" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1755" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/ic_launcher_logo_background.xml" value="0.1915" />
@@ -18,13 +19,14 @@
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/social_media_bg.xml" value="0.1915" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/social_media_off.xml" value="0.1915" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/drawable/social_media_on.xml" value="0.1915" />
-        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_enter_names.xml" value="0.264" />
-        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_enter_numbers.xml" value="0.2" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_enter_names.xml" value="0.176" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_enter_numbers.xml" value="0.16" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_enter_others.xml" value="0.264" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_random_names.xml" value="0.176" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_random_number.xml" value="0.2" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_random_number_specific.xml" value="0.1125" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_random_other.xml" value="0.2" />
-        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_splash_screen.xml" value="0.2" />
+        <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_splash_screen.xml" value="0.176" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/fragment_type_choose.xml" value="0.176" />
         <entry key="..\:/Users/IDEAPAD GAMING 3/AndroidStudioProjects/RandomChoice/app/src/main/res/layout/layout_chip_entry.xml" value="0.20625" />
         <entry key="..\:/Users/taha_jadid/AndroidStudioProjects/RandomChoiceGenerator/app/src/main/res/layout/activity_main.xml" value="0.1234375" />
