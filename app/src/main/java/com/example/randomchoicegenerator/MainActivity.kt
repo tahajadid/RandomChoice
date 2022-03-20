@@ -1,9 +1,13 @@
 package com.example.randomchoicegenerator
 
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.randomchoicegenerator.model.ModelPreferencesManager
 import com.google.android.gms.ads.MobileAds
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
