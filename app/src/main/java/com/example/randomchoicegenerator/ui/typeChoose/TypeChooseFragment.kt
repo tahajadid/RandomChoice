@@ -298,7 +298,7 @@ class TypeChooseFragment : Fragment() {
 
         InterstitialAd.load(
             context,
-            "ca-app-pub-3940256099942544/1033173712",
+            "ca-app-pub-9891641863040459/2529349433",
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(ad: InterstitialAd) {
