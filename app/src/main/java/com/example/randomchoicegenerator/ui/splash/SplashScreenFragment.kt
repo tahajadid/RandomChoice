@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentSplashScreenBinding
 import com.example.spicyanimation.SpicyAnimation
+import com.google.android.gms.ads.AdRequest
 
 class SplashScreenFragment : Fragment() {
 
@@ -41,7 +42,7 @@ class SplashScreenFragment : Fragment() {
         // to send a message with a delayed time.
         Handler().postDelayed({
             findNavController().navigate(R.id.typeChooseFragment)
-        }, 2500) // 2500 is the delayed time in milliseconds.
+        }, 3500) // 2500 is the delayed time in milliseconds.
 
 
         // Inflate the layout for this fragment

@@ -32,6 +32,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline9" />
 
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:adSize="BANNER"
+            android:layout_marginBottom="4dp"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            app:layout_constraintBottom_toTopOf="@+id/next_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/home_btn"
@@ -279,7 +291,7 @@
             android:layout_width="140dp"
             android:layout_height="40dp"
             android:visibility="gone"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/new_random_bg"
             android:padding="10dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline9"

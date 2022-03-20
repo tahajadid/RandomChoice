@@ -15,6 +15,7 @@ import com.example.randomchoicegenerator.model.ListOfNames
 import com.example.randomchoicegenerator.model.ListOfOthers
 import com.example.randomchoicegenerator.model.SocialMediaSelected
 import com.example.spicyanimation.SpicyAnimation
+import com.google.android.gms.ads.AdRequest
 import kotlin.random.Random
 
 
@@ -37,8 +38,14 @@ class RandomOtherFragment : Fragment() {
             false
         )
 
+        setBannerAds()
         initComponent()
         return binding.root
+    }
+
+    private fun setBannerAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
     }
 
     private fun initComponent() {

@@ -134,6 +134,10 @@ class EnterNumbersFragment : Fragment() {
             }
         )
 
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.typeChooseFragment)
+        }
+
         binding.nextBtn.setOnClickListener {
 
             if(sectionSelected==0){

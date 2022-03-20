@@ -1,6 +1,7 @@
 package com.example.randomchoicegenerator.ui.typeChoose
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,15 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentTypeChooseBinding
+import com.example.randomchoicegenerator.model.ModelPreferencesManager
 import com.example.spicyanimation.SpicyAnimation
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 class TypeChooseFragment : Fragment() {
+
+    private var interstitialAd: InterstitialAd? = null
 
     private lateinit var binding: FragmentTypeChooseBinding
     private var isSelected = 0
@@ -31,19 +38,33 @@ class TypeChooseFragment : Fragment() {
             false
         )
 
+        // Ads
+        setInterstitalAd()
+        setBannerAds()
+
         SpicyAnimation().fadeToDown(binding.separatorTop, 20F, 400)
         initComponent()
         return binding.root
     }
 
+
+
     override fun onResume() {
         super.onResume()
     }
 
+
+
     private fun initComponent() {
         initBackground()
 
-        if(!isShowen) showDemoSteps()
+        /**
+         * Verify if this is the first connexion
+         */
+        if (ModelPreferencesManager.get<Boolean>("firstConnexion") == null) {
+            showDemoSteps()
+            ModelPreferencesManager.put(true, "firstConnexion") // Raise true of user had already connected
+        }
 
         SpicyAnimation().fadeToDown(binding.descriptionNumbers,20F,600)
         SpicyAnimation().fadeToDown(binding.descriptionNames,20F,800)
@@ -91,10 +112,18 @@ class TypeChooseFragment : Fragment() {
         // Section next button
         binding.nextBtn.setOnClickListener {
 
+
+            if(interstitialAd!=null){
+                Log.d("LogAdsSee","if")
+                interstitialAd?.show(requireActivity())
+            }else{
+                Log.d("LogAdsSee","else")
+            }
+
             when (isSelected) {
                 0 -> {
                     binding.error.visibility = View.VISIBLE
-                    SpicyAnimation().fadeToUp(binding.nextBtn, 30F, 200)
+                    SpicyAnimation().fadeToDown(binding.nextBtn, 30F, 200)
                 }
                 1 -> {
                     binding.error.visibility = View.GONE
@@ -136,6 +165,8 @@ class TypeChooseFragment : Fragment() {
 
     private fun showDemoSteps() {
         initBackground()
+        disableInteraction()
+
         binding.viewDemo.visibility = View.VISIBLE
         binding.textView2.elevation = 10F
         binding.imageView.elevation = 10F
@@ -143,6 +174,19 @@ class TypeChooseFragment : Fragment() {
 
         initViewDemo()
         showPartOne()
+    }
+
+    private fun disableInteraction() {
+        binding.choiceOne.isEnabled = false
+        binding.choiceTwo.isEnabled = false
+        binding.choiceTwo.isEnabled = false
+
+    }
+
+    private fun enableInteraction() {
+        binding.choiceOne.isEnabled = true
+        binding.choiceTwo.isEnabled = true
+        binding.choiceTwo.isEnabled = true
     }
 
     private fun showPartOne() {
@@ -206,7 +250,7 @@ class TypeChooseFragment : Fragment() {
             binding.separatorTop.elevation = 0F
 
             initComponent()
-
+            enableInteraction()
         }
 
     }
@@ -223,5 +267,49 @@ class TypeChooseFragment : Fragment() {
         binding.descriptionNames.visibility = View.GONE
         binding.descriptionNumbers.visibility = View.GONE
 
+    }
+
+    private fun setBannerAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+    }
+
+    private fun setInterstitalAd() {
+
+        interstitialAd = null
+        MobileAds.initialize(context)
+
+        // Create a full screen content callback.
+        val fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                super.onAdFailedToShowFullScreenContent(p0)
+            }
+
+            override fun onAdShowedFullScreenContent() {
+                super.onAdShowedFullScreenContent()
+            }
+
+            override fun onAdDismissedFullScreenContent() {
+                super.onAdDismissedFullScreenContent()
+                interstitialAd = null
+            }
+
+        }
+
+        InterstitialAd.load(
+            context,
+            "ca-app-pub-3940256099942544/1033173712",
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    interstitialAd = ad
+                    interstitialAd?.fullScreenContentCallback = fullScreenContentCallback
+                }
+
+                override fun onAdFailedToLoad(p0: LoadAdError) {
+                    super.onAdFailedToLoad(p0)
+                }
+
+            })
     }
 }

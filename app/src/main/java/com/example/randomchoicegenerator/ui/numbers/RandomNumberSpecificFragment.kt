@@ -14,6 +14,7 @@ import com.example.randomchoicegenerator.databinding.FragmentRandomNumberSpecifi
 import com.example.randomchoicegenerator.model.ListOfNames
 import com.example.randomchoicegenerator.model.ListOfNumbers
 import com.example.spicyanimation.SpicyAnimation
+import com.google.android.gms.ads.AdRequest
 import kotlin.random.Random
 
 class RandomNumberSpecificFragment : Fragment() {
@@ -35,8 +36,14 @@ class RandomNumberSpecificFragment : Fragment() {
             false
         )
 
+        setBannerAds()
         initComponent()
         return binding.root
+    }
+
+    private fun setBannerAds() {
+        val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
     }
 
     private fun initComponent() {

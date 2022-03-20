@@ -59,6 +59,10 @@ class EnterNamesFragment : Fragment() {
             addNewChip()
         }
 
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.typeChooseFragment)
+        }
+
         binding.nextBtn.setOnClickListener {
             getItems()
             if(ListOfNames.size==0){
