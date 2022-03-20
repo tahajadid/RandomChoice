@@ -3,7 +3,7 @@
     <string name="description_names">Entrez votre liste des mots/noms que vous voulez..</string>
     <string name="description_other">Entrez des comptes (Instagram,Facebook..), des tag, des Urls, ce que vous voulez..</string>
 
-    <string name="app_name">Aléatoire</string>
+    <string name="app_name">Choix Aléatoire</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
