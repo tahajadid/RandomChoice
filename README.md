@@ -8,7 +8,6 @@
 "Choix Aléatoire" or "Random choice" is an application that helps people to get random numbers or names or any kind of text.
 It can helps in random choices of social media competition..
 
-[Play Store Link](https://play.google.com/store/apps/details?id=com.tahadeta.randomchoicegenerator)
 
 ## Description
 
