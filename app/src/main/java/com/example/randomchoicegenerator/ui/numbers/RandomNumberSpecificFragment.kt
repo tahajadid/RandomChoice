@@ -2,38 +2,39 @@ package com.example.randomchoicegenerator.ui.numbers
 
 import android.animation.Animator
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.randomchoicegenerator.MainActivity
 import com.example.randomchoicegenerator.R
-import com.example.randomchoicegenerator.databinding.FragmentRandomNamesBinding
 import com.example.randomchoicegenerator.databinding.FragmentRandomNumberSpecificBinding
-import com.example.randomchoicegenerator.model.ListOfNames
 import com.example.randomchoicegenerator.model.ListOfNumbers
 import com.example.spicyanimation.SpicyAnimation
-import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
 import kotlin.random.Random
 
 class RandomNumberSpecificFragment : Fragment() {
     private lateinit var binding: FragmentRandomNumberSpecificBinding
+    private var adView: AdView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_random_number_specific,
             container,
-            false
+            false,
         )
 
         setBannerAds()
@@ -42,8 +43,20 @@ class RandomNumberSpecificFragment : Fragment() {
     }
 
     private fun setBannerAds() {
+        // Create a new ad view.
+        val adView = AdView(MainActivity.activityInstance)
+        adView.adUnitId = "ca-app-pub-9891641863040459/6660166132"
+        this.adView = adView
+
+        // Replace ad container with new ad view.
+        binding.adView.removeAllViews()
+        binding.adView.addView(adView)
+
+        /*
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
+
+         */
     }
 
     private fun initComponent() {
@@ -99,10 +112,9 @@ class RandomNumberSpecificFragment : Fragment() {
         }
     }
 
-    private fun getRandomNumber() : Int {
+    private fun getRandomNumber(): Int {
         // The min parameter (the origin) is inclusive
         // whereas the upper bound max is exclusive.
         return Random.nextInt(0, ListOfNumbers.size!!.toInt())
     }
-
 }
