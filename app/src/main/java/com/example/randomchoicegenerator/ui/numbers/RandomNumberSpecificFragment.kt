@@ -67,22 +67,22 @@ class RandomNumberSpecificFragment : Fragment() {
         binding.animationView.playAnimation()
 
         binding.animationView.addAnimatorListener(object : Animator.AnimatorListener {
-            override fun onAnimationRepeat(animation: Animator?) {
+            override fun onAnimationRepeat(animation: Animator) {
                 // Do nothing
             }
 
-            override fun onAnimationEnd(animation: Animator?) {
+            override fun onAnimationEnd(animation: Animator) {
                 // Do nothing
                 initRandomChoice()
                 binding.homeBtn.isEnabled = true
                 binding.nextBtn.isEnabled = true
             }
 
-            override fun onAnimationCancel(animation: Animator?) {
+            override fun onAnimationCancel(animation: Animator) {
                 // Do nothing
             }
 
-            override fun onAnimationStart(animation: Animator?) {
+            override fun onAnimationStart(animation: Animator) {
                 // Do nothing
             }
         })
