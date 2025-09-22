@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.randomchoicegenerator.MainActivity
 import com.example.randomchoicegenerator.R
 import com.example.randomchoicegenerator.databinding.FragmentTypeChooseBinding
 import com.example.randomchoicegenerator.model.ModelPreferencesManager
@@ -277,7 +278,7 @@ class TypeChooseFragment : Fragment() {
     private fun setInterstitalAd() {
 
         interstitialAd = null
-        MobileAds.initialize(context)
+        MobileAds.initialize(MainActivity.activityInstance)
 
         // Create a full screen content callback.
         val fullScreenContentCallback = object : FullScreenContentCallback() {
@@ -297,7 +298,7 @@ class TypeChooseFragment : Fragment() {
         }
 
         InterstitialAd.load(
-            context,
+            MainActivity.activityInstance,
             "ca-app-pub-9891641863040459/2529349433",
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {

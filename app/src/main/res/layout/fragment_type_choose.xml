@@ -13,13 +13,11 @@
         android:background="@color/blue_gray_100">
 
 
-
-
         <TextView
             android:id="@+id/choice_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/choose_type_bg_unselected"
             android:fontFamily="@font/roboto_medium"
             android:paddingVertical="20dp"
